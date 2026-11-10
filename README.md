@@ -1,6 +1,6 @@
 <div align="center">
 
-# JARVIS Firmware for a ESP32
+# JARVIS Firmware for ESP32
 
 **A retro green-terminal firmware that an ESP32 serves from its own Wi-Fi network.**
 
