@@ -1,8 +1,8 @@
 <div align="center">
 
-# JARVIS Command Center
+# JARVIS Firmware for a ESP32
 
-**A retro green-terminal command center that an ESP32 serves from its own Wi-Fi network.**
+**A retro green-terminal firmware that an ESP32 serves from its own Wi-Fi network.**
 
 `LOGIN → ACCESS GRANTED → ESP32 BOOT ANIMATION → COMMAND CENTER`
 
@@ -14,15 +14,13 @@
 
 ![JARVIS dashboard](docs/images/04-dashboard.png)
 
-<sub>Rendered in Chrome against a simulated API (sample data, an extra example `RELAY_1` row, fake MAC). Not a hardware capture.</sub>
-
 </div>
 
 ## What is this?
 
-JARVIS Command Center turns a plain **ESP32-WROOM-32** board into a self-contained web dashboard. The board
+JARVIS firmware turns a plain **ESP32-WROOM-32** board into a self-contained web dashboard. The board
 creates its own Wi-Fi access point and serves a single-page app from its flash memory. You join that network
-from a laptop, open `http://192.168.4.1/`, log in, and watch the device's status or switch a few hardware
+from a laptop, open `http://192.xyz.4.1/`, log in, and watch the device's status or switch a few hardware
 features that **you** explicitly list in the configuration.
 
 There is no internet, router or cloud involved, and nothing is loaded from external servers.
@@ -33,7 +31,7 @@ UI instead of a generic dashboard. It is shared so other students and makers can
 change it.
 
 > **Not production security.** This is a hobby project: plain HTTP, credentials compiled into the firmware.
-> See [SECURITY.md](SECURITY.md) before using it for anything that matters.
+> See [SECURITY.md](SECURITY.md) before using it for anything that matters!.
 
 ## Features and honest status
 
@@ -57,17 +55,17 @@ please open an issue with a redacted serial log.
 
 | Hardware | Software |
 |---|---|
-| ESP32-WROOM-32 dev board (PlatformIO board `esp32dev`) | Windows laptop with Wi-Fi |
+| ESP32-WROOM-32 dev board (PlatformIO board `esp32dev`) | Windows/Linux/Mac os laptop with Wi-Fi |
 | USB **data** cable | [Visual Studio Code](https://code.visualstudio.com/) + PlatformIO IDE extension |
-| *(optional)* LED + resistor, I2C device | Google Chrome |
+| *(optional)* LED + resistor, I2C device, or any sensors for upgradation  | Google Chrome |
 
-Libraries (`AsyncTCP`, `ESPAsyncWebServer`) are downloaded automatically by PlatformIO.
+Libraries (`AsyncTCP`, `ESPAsyncWebServer`) are downloaded automatically by PlatformIO.👾
 
-## Quick start (Windows + PlatformIO)
+## Quick start (Windows + vs code (PlatformIO))
 
 Full beginner walkthrough with expected output: **[docs/INSTALLATION.md](docs/INSTALLATION.md)**.
 
-1. **Install** VS Code, then the *PlatformIO IDE* extension. Install the USB-serial driver if Windows shows no COM port.
+1. **Install** VS Code, then the *PlatformIO IDE* extension. Install the USB-serial driver, if Windows shows no COM port.
 2. **Open** this folder in VS Code (*File → Open Folder*, the one that contains `platformio.ini`).
 3. **Create your private credentials** — the repository ships only a template:
    ```bat
@@ -146,7 +144,7 @@ third_party/          font license texts
 | [SECURITY](SECURITY.md) | Security model, limitations, reporting vulnerabilities |
 | [PDF edition](docs/JARVIS_Documentation.pdf) | Notebook-style overview of all of the above |
 
-## Troubleshooting (short)
+## Troubleshooting 
 
 | Symptom | First thing to try |
 |---|---|
@@ -163,7 +161,7 @@ Everything else: [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md).
 
 **Known limitations** — desktop layout only; no HTTPS; credentials compiled into firmware; Classic Bluetooth
 unused and BLE is advertising-only; no OTA updates (`huge_app.csv` has no OTA slots); `platform` is not
-version-pinned; hardware actions not yet verified on real boards.
+version-pinned; *hardware actions not yet verified on real boards!*.
 
 **Ideas, not implemented** — HTTPS or a change-password flow stored in NVS; a BLE GATT service; sensor modules
 for the empty slots; pinned library/platform versions after hardware verification; a compile-time guard against
@@ -174,7 +172,7 @@ See [CHANGELOG.md](CHANGELOG.md).
 ## Contributing
 
 Bug reports, ideas and pull requests are welcome — read [CONTRIBUTING.md](CONTRIBUTING.md) and the
-[Code of Conduct](CODE_OF_CONDUCT.md). Please never post real Wi-Fi details, passwords or personal paths.
+[Code of Conduct](CODE_OF_CONDUCT.md). 
 
 ## License
 
@@ -185,6 +183,8 @@ included as `LICENSE.PROPOSED-MIT.txt`, awaiting the owner's confirmation (see
 
 ## Credits
 
-**Built by ADITECHSMITH** · Instagram: [@aditechsmith](https://www.instagram.com/aditechsmith?obrf=MXZlOWpub2k2M3RrbQ==)
+**Built by ADITECHSMITH** 
 
-Explore it, learn from it, break it, improve it — contributions are invited.
+Instagram: [@aditechsmith](https://www.instagram.com/aditechsmith?obrf=MXZlOWpub2k2M3RrbQ==)
+
+Explore it, learn from it, break it, improve it — contributions are invited👾.
